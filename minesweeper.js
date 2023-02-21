@@ -17,9 +17,9 @@ var gameOver = false
 // }
 
 function start() {
-  const minesAmount = document.getElementById("mines-amount").value
-  if (!minesAmount) {
-    alert("Please make sure to enter the mines quantity and that it is more than 0!")
+  const minesAmount = parseInt(document.getElementById("mines-amount").value)
+  if (!minesAmount || minesAmount < 0 || minesAmount > 63) {
+    alert("Please make sure to enter the mines quantity as a number between 1 and 63!")
     return
   }
   minesCount = parseInt(minesAmount)
@@ -180,4 +180,20 @@ function checkTile(r, c) {
     return 1
   }
   return 0
+}
+
+window.onload = (event) => {
+// Get the input field
+  var minesAmountInput = document.getElementById("mines-amount");
+
+// Execute a function when the user presses a key on the keyboard
+  minesAmountInput.addEventListener("keypress", function (event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.getElementById("start-button").click();
+    }
+  });
 }
