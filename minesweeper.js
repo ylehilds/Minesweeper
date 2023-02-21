@@ -22,6 +22,7 @@ function start() {
     alert("Please make sure to enter the mines quantity as a number between 1 and 63!")
     return
   }
+  minesCount = minesAmount
   startGame()
   document.getElementById("start-button").disabled = true
 }
