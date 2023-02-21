@@ -8,7 +8,9 @@
         <script src="minesweeper.js"></script>
     </head>
     <body>
-        <h1>Mines: <span id="mines-count">0</span></h1>
+        <h1>Mines Amount: <span id="mines-count"><input id="mines-amount" type="text" /></span></h1>
+        <button id="start-button" onclick="start()">Start Game</button>
+        <button id="restart-button" onclick="restart()">Restart Game</button>
         <div id="board"></div>
         <br>
         <button id="flag-button">🚩</button>

@@ -12,8 +12,23 @@ var flagEnabled = false
 var gameOver = false
 
 
-window.onload = function() {
+// window.onload = function() {
+//   startGame()
+// }
+
+function start() {
+  const minesAmount = document.getElementById("mines-amount").value
+  if (!minesAmount) {
+    alert("Please make sure to enter the mines quantity and that it is more than 0!")
+    return
+  }
+  minesCount = parseInt(minesAmount)
   startGame()
+  document.getElementById("start-button").disabled = true
+}
+
+function restart() {
+  window.location.reload()
 }
 
 function setMines() {
